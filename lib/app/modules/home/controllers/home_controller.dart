@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -17,5 +16,27 @@ class HomeController extends GetxController {
     CollectionReference product =
         FirebaseFirestore.instance.collection('products');
     return product.snapshots();
+  }
+
+  void deleteProduct(String docId) async {
+    DocumentReference docsRef = firestore.collection('products').doc(docId);
+
+    try {
+      Get.defaultDialog(
+        title: 'Hapus',
+        middleText: 'Data Berhasil di apus',
+        onConfirm: () async {
+          await docsRef.delete();
+          Get.back();
+        },
+        textCancel: 'No',
+        textConfirm: 'Yes',
+      );
+    } catch (e) {
+      Get.defaultDialog(
+        title: 'Error',
+        middleText: 'Terjadi Kesalahaan',
+      );
+    }
   }
 }

@@ -4,4 +4,5 @@ part of 'app_pages.dart';
 abstract class Paths {
   static const HOME = '/home';
   static const DETAIL = '/detail';
+  static const EDIT = '/edit';
 }

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:crud_firestore/app/modules/home/views/detail_view.dart';
+
 import 'package:crud_firestore/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +30,17 @@ class HomeView extends GetView<HomeController> {
               itemCount: listalldokuement.length,
               itemBuilder: (context, index) {
                 return ListTile(
+                  onTap: () => Get.toNamed(
+                    Paths.EDIT,
+                    arguments: listalldokuement[index].id,
+                  ),
                   leading: Icon(Icons.shop),
+                  trailing: IconButton(
+                    onPressed: () {
+                      controller.deleteProduct(listalldokuement[index].id);
+                    },
+                    icon: Icon(Icons.delete),
+                  ),
                   title: Text(
                       'Nama Product : ${(listalldokuement[index].data() as Map<String, dynamic>)['name']}'),
                   subtitle: Text(

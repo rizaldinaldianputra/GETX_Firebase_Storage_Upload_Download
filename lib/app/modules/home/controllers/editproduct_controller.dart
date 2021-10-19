@@ -2,24 +2,33 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class AddproductController extends GetxController {
+class EditControoler extends GetxController {
   late TextEditingController Cnameproduk;
   late TextEditingController Cjumlah;
+  FirebaseFirestore firebase = FirebaseFirestore.instance;
 
-  void adddata(String name, String pcs) async {
-    CollectionReference product =
-        FirebaseFirestore.instance.collection('products');
+// get document data dengan id
+  Future<DocumentSnapshot<Object?>> getdata(String docsId) async {
+    DocumentReference docsRef = firebase.collection('products').doc(docsId);
+
+    return docsRef.get();
+  }
+
+  void editdata(String name, String pcs, String docId) async {
+    DocumentReference<Map<String, dynamic>> product =
+        FirebaseFirestore.instance.collection('products').doc(docId);
 
     try {
-      await product.add({
+      await product.update({
         'name': name, // John Doe
         'pcs': pcs, // Stokes and Sons
       });
 
       Get.defaultDialog(
           title: 'Berhasil',
-          middleText: 'Data Telah Di tambahkan',
+          middleText: 'Data Telah Di edit',
           onConfirm: () {
+            Get.back();
             Get.back();
 
             Cnameproduk.clear();
@@ -39,11 +48,6 @@ class AddproductController extends GetxController {
     Cnameproduk = TextEditingController();
     Cjumlah = TextEditingController();
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
   }
 
   @override
