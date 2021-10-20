@@ -13,11 +13,12 @@ class QueryView extends GetView<QueryController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'QueryView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+          child: ElevatedButton(
+        onPressed: () {
+          controller.filter('25');
+        },
+        child: Text('Filtter Data'),
+      )),
     );
   }
 }

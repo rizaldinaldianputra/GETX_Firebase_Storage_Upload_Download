@@ -8,13 +8,16 @@ import 'app/routes/app_pages.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
-  runApp(
-    GetMaterialApp(
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Application",
-      initialRoute: Paths.HOME,
+      initialRoute: Routes.QUERY,
       getPages: AppPages.routes,
-    ),
-  );
+    );
+  }
 }
