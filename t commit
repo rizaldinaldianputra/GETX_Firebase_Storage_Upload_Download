@@ -1,0 +1,23 @@
+[33mcommit b955d2bae429ca3f3a06fac491096d55b1f24d34[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Rizal <rizaldinaldianputra>
+Date:   Wed Oct 20 13:32:10 2021 +0700
+
+    menambahkan project filter
+
+[33mcommit 8a485805a51d9ab884e17032f901f7f42453d655[m
+Author: Rizal <rizaldinaldianputra>
+Date:   Wed Oct 20 04:25:50 2021 +0700
+
+     menambahkan fitur update dan delete
+
+[33mcommit 3d52c07eeae274f11ebebbcad1688c9b4ee3455f[m
+Author: Rizal <rizaldinaldianputra>
+Date:   Wed Oct 20 02:45:51 2021 +0700
+
+     menambahkan project baru update dan select
+
+[33mcommit c2b38ca9149c79316c6d1749086c6e272410d3b2[m
+Author: Rizal <rizaldinaldianputra>
+Date:   Wed Oct 20 02:44:16 2021 +0700
+
+    first commit
