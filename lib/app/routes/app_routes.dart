@@ -5,4 +5,5 @@ abstract class Paths {
   static const HOME = '/home';
   static const DETAIL = '/detail';
   static const EDIT = '/edit';
+  static const QUERY = '/query';
 }

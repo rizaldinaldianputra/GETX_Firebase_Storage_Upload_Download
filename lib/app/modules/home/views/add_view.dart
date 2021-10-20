@@ -18,7 +18,8 @@ class DetailView extends GetView<AddproductController> {
         title: Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(15),
         child: Column(
           children: [
             TextField(
@@ -27,6 +28,9 @@ class DetailView extends GetView<AddproductController> {
                 labelText: 'Product',
               ),
               controller: controller.Cnameproduk,
+            ),
+            SizedBox(
+              height: 15,
             ),
             TextField(
               decoration: InputDecoration(

@@ -13,7 +13,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.toNamed(Paths.DETAIL);
+          Get.toNamed(Routes.DETAIL);
         },
         child: Icon(Icons.add),
       ),
@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
               itemBuilder: (context, index) {
                 return ListTile(
                   onTap: () => Get.toNamed(
-                    Paths.EDIT,
+                    Routes.EDIT,
                     arguments: listalldokuement[index].id,
                   ),
                   leading: Icon(Icons.shop),
